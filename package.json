@@ -1,0 +1,19 @@
+{
+  "name": "fittrack",
+  "version": "1.0.0",
+  "description": "API to get your health on track",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InesPessoa/FitTrack.git"
+  },
+  "author": "Inês Pessoa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/InesPessoa/FitTrack/issues"
+  },
+  "homepage": "https://github.com/InesPessoa/FitTrack#readme"
+}
