@@ -2,7 +2,7 @@ import { Exercise } from './exercise.entity';
 
 export const exerciseProviders = [
   {
-    provide: 'Exercise_REPOSITORY',
+    provide: 'EXERCISE_REPOSITORY',
     useValue: Exercise,
   },
 ];

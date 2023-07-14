@@ -3,7 +3,7 @@ import { Table, Column, Model, DataType } from 'sequelize-typescript';
 @Table
 export class Exercise extends Model<Exercise> {
   @Column({
-    type: DataType.NUMBER,
+    type: DataType.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   })

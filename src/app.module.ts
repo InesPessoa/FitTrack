@@ -8,8 +8,8 @@ import { ExerciseModule } from './modules/exercise/exercise.module';
   imports: [
     HelloModule,
     DatabaseModule,
-    ConfigModule.forRoot({ isGlobal: true }),
     ExerciseModule,
+    ConfigModule.forRoot({ isGlobal: true }),
   ],
 })
 export class AppModule {}

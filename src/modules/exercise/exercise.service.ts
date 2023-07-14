@@ -10,6 +10,6 @@ export class ExerciseService {
   ) {}
 
   async create(exerciseDto: CreateExerciseDto): Promise<Exercise> {
-    return this.exerciseRepository.create<Exercise>();
+    return this.exerciseRepository.create<Exercise>(exerciseDto);
   }
 }

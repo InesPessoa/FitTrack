@@ -1,27 +1,20 @@
 import { Sequelize } from 'sequelize-typescript';
 import { SEQUELIZE, DEVELOPMENT, TEST, PRODUCTION } from '../consts/index';
-import { databaseConfig } from './database.config';
+import { Exercise } from 'src/modules/exercise/exercise.entity';
 
 export const databaseProviders = [
   {
     provide: SEQUELIZE,
     useFactory: async () => {
-      let config;
-      switch (process.env.NODE_ENV) {
-        case DEVELOPMENT:
-          config = databaseConfig.development;
-          break;
-        case TEST:
-          config = databaseConfig.test;
-          break;
-        case PRODUCTION:
-          config = databaseConfig.production;
-          break;
-        default:
-          config = databaseConfig.development;
-      }
-      const sequelize = new Sequelize(config);
-      sequelize.addModels(['models goes here']);
+      const sequelize = new Sequelize({
+        dialect: 'postgres',
+        host: process.env.DB_HOST,
+        port: parseInt(process.env.DB_PORT),
+        username: process.env.DB_USER,
+        password: process.env.DB_PASS,
+        database: process.env.DB_NAME,
+      });
+      sequelize.addModels([Exercise]);
       await sequelize.sync();
       return sequelize;
     },
